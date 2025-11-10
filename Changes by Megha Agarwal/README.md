@@ -1,4 +1,4 @@
-# LiveKit Voice Interruption Handling — SalesCode.ai Final Round (Megha)
+# LiveKit Voice Interruption Handling — SalesCode.ai Final Round (Megha Agarwal)
 
 This branch implements an **extension-layer interrupt handler** for a LiveKit voice agent.  
 It filters out fillers like “uh/umm/hmm/haan” **only while the agent is speaking**, but treats them as normal speech when the agent is quiet. It also prioritizes **real interrupts** like “wait/stop/hold on” with near-zero added latency.  
@@ -15,7 +15,7 @@ Challenge brief referenced from *SalesCode_AI_Final_Round_Qualifier.pdf*.
 
 ---
 
-## Key behaviors (spec-compliant)
+## Key behaviors
 
 1. **Ignore fillers when TTS is speaking**  
    If the agent is in the `speaking` state, filler‑only segments are dropped (no interruption).
@@ -34,7 +34,7 @@ Challenge brief referenced from *SalesCode_AI_Final_Round_Qualifier.pdf*.
 
 ---
 
-## How it works (high level)
+## How it works
 
 - The session emits events for **agent state** and **user transcripts**.  
 - `InterruptExtension` keeps an `agent_speaking` flag and an async lock for thread-safety.  
